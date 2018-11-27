@@ -1,15 +1,13 @@
 package xyz.minecraftpasswordhack.utils;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import xyz.minecraftpasswordhack.Main;
 
 public class PasswordUtil {
 
-	private static List<String> passwords = new ArrayList<String>();
+	private static final List<String> passwords = new ArrayList<>();
 	private static String currentPassword = "";
 	private static int nextPassword = 0;
 	
@@ -23,7 +21,6 @@ public class PasswordUtil {
 		} catch (Exception e) {
 			Utils.handleError(e.toString());
 		}
-		
 		if (passwords.size() <= 0) {
 			Utils.handleError("Brak hasel!");
 		}
@@ -37,16 +34,14 @@ public class PasswordUtil {
 	public static String getPasswordCommand() {
 		String password = "";
 		String str = "";
-		
 		try {
 			password = passwords.get(nextPassword);
-			currentPassword = password;
+			currentPassword = passwords.get(nextPassword);
 			str = Main.getConfig().getLoginCommand() + " " + password;
 			nextPassword++;
 		} catch (IndexOutOfBoundsException e) {
 			str = "KONIEC_TEGO";
 		}
-		
 		return str;
 	}
 }

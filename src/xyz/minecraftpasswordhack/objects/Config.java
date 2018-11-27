@@ -1,19 +1,14 @@
 package xyz.minecraftpasswordhack.objects;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.Scanner;
 
 import xyz.minecraftpasswordhack.utils.Utils;
 
 public class Config {
 
-	private String ip;
-	private int port;
-	private String nick;
-	private String loginCommand;
-	private String loginSucessMessage;
-	private int commandSentTime;
+	private String ip, nick, loginCommand, loginSuccessMessage;
+	private int port, commandSentTime;
 	
 	public Config() { }
 	
@@ -34,7 +29,7 @@ public class Config {
 				} else if (args[0].equals("login-command")) {
 					this.loginCommand = args[1];
 				} else if (args[0].equals("login-success-message")) {
-					this.loginSucessMessage = args[1];
+					this.loginSuccessMessage = args[1];
 				} else if (args[0].equals("command-send-time")) {
 					this.commandSentTime = Integer.parseInt(args[1]);
 				}
@@ -66,7 +61,7 @@ public class Config {
 	}
 
 	public String getLoginSucessMessage() {
-		return loginSucessMessage;
+		return loginSuccessMessage;
 	}
 
 	private void scanAll() {

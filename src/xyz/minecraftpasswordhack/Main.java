@@ -2,15 +2,14 @@ package xyz.minecraftpasswordhack;
 
 import java.util.logging.Logger;
 
-import xyz.minecraftpasswordhack.objects.Bot;
-import xyz.minecraftpasswordhack.objects.Config;
+import xyz.minecraftpasswordhack.objects.*;
 import xyz.minecraftpasswordhack.utils.PasswordUtil;
 
 /*
  * Projekt napisany w celach edukacyjnych.
- * Pokazuj¹cy, ¿e maszynki do "hakowania" jednak moga dzialaæ.
- * Twórca nie odpowiada za szkody wyrz¹dzone t¹ maszynk¹.
- * Twórca: gucciMatix
+ * Pokazujacy, ze maszynki do "hakowania" jednak moga dzialac.
+ * Tworca nie odpowiada za szkody wyrzadzone ta maszynki.
+ * Tworca: gucciMatix, kod poprawial Unix.
  */
 
 public class Main {
